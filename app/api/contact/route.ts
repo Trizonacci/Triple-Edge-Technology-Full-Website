@@ -1,7 +1,8 @@
-import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/db';
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
-export const dynamic = 'force-dynamic';
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/db";
 
 export async function POST(request: Request) {
   try {
