@@ -2,10 +2,11 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
 
 export async function POST(request: Request) {
   try {
+    const { prisma } = await import("@/lib/db");
+
     const data = await request.json();
     const { email, phone, description } = data;
 
